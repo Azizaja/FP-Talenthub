@@ -26,26 +26,6 @@ app.get("/movies", async (request, response) => {
   }
 });
 
-app.get("/movies/:id", async (request, response) => {
-  try {
-    const data = await pool.query(
-      `SELECT * FROM Movies WHERE id = ${request.params.id}`
-    );
-
-    let dataMovies = data.rows[0];
-
-    // if (dataMovies === undefined || dataMovies === null) {}
-    if (!dataMovies) {
-      response.status(404).json({ message: "Data Not Found" });
-    } else {
-      response.json(dataMovies);
-    }
-  } catch (error) {
-    console.log(error);
-    response.status(500).json({ message: "Internal Server Error" });
-  }
-});
-
 app.get("/menu", async (request, response) => {
   try {
     const data = await pool.query(`SELECT * FROM TableMenus`);
@@ -77,6 +57,27 @@ app.get("/menus/:id", async (request, response) => {
     response.status(500).json({ message: "Internal Server Error" });
   }
 });
+
+
+// app.get("/movies/:id", async (request, response) => {
+//   try {
+//     const data = await pool.query(
+//       `SELECT * FROM Movies WHERE id = ${request.params.id}`
+//     );
+
+//     let dataMovies = data.rows[0];
+
+//     // if (dataMovies === undefined || dataMovies === null) {}
+//     if (!dataMovies) {
+//       response.status(404).json({ message: "Data Not Found" });
+//     } else {
+//       response.json(dataMovies);
+//     }
+//   } catch (error) {
+//     console.log(error);
+//     response.status(500).json({ message: "Internal Server Error" });
+//   }
+// });
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);

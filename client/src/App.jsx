@@ -61,13 +61,6 @@ function App() {
       </nav>
 
       <div className="container py-5">
-        {/* <div className="d-flex justify-content-center">
-          <img
-            src="https://i.pinimg.com/736x/29/4d/ed/294dedc054293a5939bf32ba6ad40fe1.jpg"
-            alt=""
-            style={{ height: "300px", width: "768px", objectFit: "cover" }}
-          />
-        </div> <br /> */}
         <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
           <div className="carousel-inner">
             <div className="carousel-item active">
