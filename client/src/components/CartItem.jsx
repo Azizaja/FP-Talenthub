@@ -43,4 +43,4 @@ function Cart({ cartItems }) {
   );
 }
 
-export default Cart; // Pastikan Cart yang diexport, bukan CartItem
+export default CartItem; // Pastikan Cart yang diexport, bukan CartItem
