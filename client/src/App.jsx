@@ -29,7 +29,7 @@ function App() {
     getData();
   }, []);
 
-  console.log(dataMenus);
+  // console.log(dataMenus);
 
   //? handle cart
   const [cart, setCart] = useState([]);
@@ -97,9 +97,16 @@ function App() {
           ></button>
         </div>
         <div className="offcanvas-body d-flex flex-column gap-2">
-          {cart.map((el, i) => {
-            return <CartItem cart={el} key={i} />;
-          })}
+          {/* Menambahkan kondisi jika cart kosong */}
+          {cart.length === 0 ? (
+            <div className="d-flex justify-content-center align-items-center p-4">
+              <h5>Tidak ada pesanan dipilih</h5>
+            </div>
+          ) : (
+            cart.map((el, i) => {
+              return <CartItem cart={el} key={i} />;
+            })
+          )}
         </div>
       </div>
     </>
