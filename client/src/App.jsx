@@ -100,7 +100,7 @@ function App() {
           {/* Menambahkan kondisi jika cart kosong */}
           {cart.length === 0 ? (
             <div className="d-flex justify-content-center align-items-center p-4">
-              <h5>Tidak ada pesanan dipilih</h5>
+              <h5>Tidak ada menu dipilih</h5>
             </div>
           ) : (
             cart.map((el, i) => {
